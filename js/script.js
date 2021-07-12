@@ -58,8 +58,9 @@ function palidromeChecker(word) {
 buttonCheck.addEventListener('click', function () {
 
     var wordValue = inputField.value;
+    var lowercaseValue = wordValue.toLowerCase();
     console.log(wordValue);
-    var isPalidrome = palidromeChecker(wordValue);
+    var isPalidrome = palidromeChecker(lowercaseValue);
 
     // isPALIDROME?
     if (isPalidrome) {
