@@ -19,8 +19,15 @@ var displayWord = document.getElementById('wordType');
 var displayResult = document.getElementById('result');
 
 
-var parola = prompt('Inserisci parola').toLocaleLowerCase();
-console.log(parola);
+// Dati da sito
+var inputField = document.getElementById('word');
+var buttonCheck = document.getElementById('button');
+
+
+
+
+// var parola = prompt('Inserisci parola').toLocaleLowerCase();
+// console.log(parola);
 
 // var risultato fuzione
 
@@ -48,16 +55,22 @@ function palidromeChecker(word) {
     return palidrome;
 }
 
-var isPalidrome = palidromeChecker(parola);
+buttonCheck.addEventListener('click', function () {
 
+    var wordValue = inputField.value;
+    console.log(wordValue);
+    var isPalidrome = palidromeChecker(wordValue);
 
-// isPALIDROME?
+    // isPALIDROME?
+    if (isPalidrome) {
+        displayResult.innerText = wordValue + ' is palidrome!';
+    } else {
+        displayResult.innerText = wordValue + ' is not palidrome!';
+    }
 
-if (isPalidrome) {
-    alert('is palidrome');
-} else {
-    alert('is not palidrome!');
-}
+    wordValue = "";
+
+})
 
 //! Pari e Dispari
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
