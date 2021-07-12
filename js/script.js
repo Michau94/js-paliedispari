@@ -28,26 +28,42 @@ var buttonCheck = document.getElementById('button');
 
 function palidromeChecker(word) {
 
-    //divisione parola in array di caratteri
+    //!divisione parola in array di caratteri
     var split = word.split('');
+    console.log(split);
 
-    // inversione dell'index dei caratteri
-    var reverse = split.reverse();
 
-    //ricomposizione degli elementi in un unica parola
+    //! soluzione con ciclo for
+    var len = split.length;
+    var palidrome = true;
+    for (var i = 0; i < len / 2; i++) {
+        if (split[i] !== split[len - 1 - i]) {
+            palidrome = false;
+        }
+        return palidrome;
 
-    var reverseWord = reverse.join('');
-
-    // isPalidrome?
-    var palidrome = false;
-
-    if (word === reverseWord) {
-        palidrome = true;
     }
 
-    // restituisci parola invertita intera
 
-    return palidrome;
+    /*
+        // inversione dell'index dei caratteri
+        var reverse = split.reverse();
+    
+        //ricomposizione degli elementi in un unica parola
+    
+        var reverseWord = reverse.join('');
+    
+        // isPalidrome?
+        var palidrome = false;
+    
+        if (word === reverseWord) {
+           palidrome = true;
+        }
+    
+        // restituisci parola invertita intera
+    
+        return palidrome;*/
+
 }
 
 buttonCheck.addEventListener('click', function () {
@@ -61,7 +77,7 @@ buttonCheck.addEventListener('click', function () {
 
 
         //lowercase per comparazione
-        var lowercaseValue = wordValue.toLowerCase();
+        var lowercaseValue = wordValue.toLowerCase().trim();
         console.log(wordValue);
         var isPalidrome = palidromeChecker(lowercaseValue);
 
@@ -101,6 +117,10 @@ buttonCheck.addEventListener('click', function () {
 //Elementi da pagina
 
 var buttonPlay = document.getElementById('play');
+var humanNumber = document.getElementById('human-number');
+var machineNumber = document.getElementById('cpu-number');
+var sumDisplay = document.getElementById('sum');
+var winnerDisplay = document.getElementById('winner');
 
 
 //dati da pagina
@@ -145,15 +165,20 @@ buttonPlay.addEventListener('click', function () {
     console.log(result);
 
     if (result == oddEvenValue) {
-        alert('human')
+        winnerDisplay.innerText = 'Human Won!'
     } else {
-        alert('machine')
+        winnerDisplay.innerText = "Machine Won!"
     }
+
+    // output
+    humanNumber.innerText = userNumber;
+    machineNumber.innerHTML = random;
+    sumDisplay.innerText = sum;
+
 
 
     // Reset valori
     userNumberField.value = " ";
-
 });
 
 

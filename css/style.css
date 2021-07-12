@@ -6,4 +6,14 @@
     box-sizing: border-box;
 }
 
+body {
+    padding: 20px;
+}
 
+.pali {
+    margin: 25px;
+}
+
+.oddeven {
+    margin: 25px;
+}
