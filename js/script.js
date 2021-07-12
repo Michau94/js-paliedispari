@@ -121,6 +121,7 @@ var humanNumber = document.getElementById('human-number');
 var machineNumber = document.getElementById('cpu-number');
 var sumDisplay = document.getElementById('sum');
 var winnerDisplay = document.getElementById('winner');
+var gameInfo = document.getElementById('gameinfo');
 
 
 //dati da pagina
@@ -147,6 +148,10 @@ buttonPlay.addEventListener('click', function () {
         alert('Per favore inserire un numero da 1 a 6')
         userNumberField.value = " ";
     } else {
+
+        //visibilità risultati gioco
+        gameInfo.classList.remove('hidden');
+
 
         var random = randomNumber();
         console.log(random);
