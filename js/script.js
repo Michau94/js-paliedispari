@@ -143,42 +143,48 @@ buttonPlay.addEventListener('click', function () {
     var oddEvenValue = oddEvenField.value;
     console.log(oddEvenValue);
     var userNumber = parseInt(userNumberField.value);
-    var random = randomNumber();
-    console.log(random);
-    console.log(userNumber);
+    if (userNumber > 6 || userNumber < 0 || !userNumber || isNaN(userNumber)) {
+        alert('Per favore inserire un numero da 1 a 6')
+        userNumberField.value = " ";
+    } else {
 
-    var sum = userNumber + random;
-    console.log(sum);
+        var random = randomNumber();
+        console.log(random);
+        console.log(userNumber);
 
-    // funzione stabilisce se un numero è pari o dispari
-    function oddEven(number) {
-        var num = 'odd';
-        if (number % 2 === 0) {
-            num = 'even';
+        var sum = userNumber + random;
+        console.log(sum);
+
+        // funzione stabilisce se un numero è pari o dispari
+        function oddEven(number) {
+            var num = 'odd';
+            if (number % 2 === 0) {
+                num = 'even';
+            }
+
+            return num;
         }
 
-        return num;
+        // risultato funzione applicato alla somma
+        var result = oddEven(sum);
+        console.log(result);
+
+        if (result == oddEvenValue) {
+            winnerDisplay.innerText = 'Human Won!'
+        } else {
+            winnerDisplay.innerText = "Machine Won!"
+        }
+
+        // output
+        humanNumber.innerText = userNumber;
+        machineNumber.innerHTML = random;
+        sumDisplay.innerText = sum;
+
+
+
+        // Reset valori
+        userNumberField.value = " ";
     }
-
-    // risultato funzione applicato alla somma
-    var result = oddEven(sum);
-    console.log(result);
-
-    if (result == oddEvenValue) {
-        winnerDisplay.innerText = 'Human Won!'
-    } else {
-        winnerDisplay.innerText = "Machine Won!"
-    }
-
-    // output
-    humanNumber.innerText = userNumber;
-    machineNumber.innerHTML = random;
-    sumDisplay.innerText = sum;
-
-
-
-    // Reset valori
-    userNumberField.value = " ";
 });
 
 
