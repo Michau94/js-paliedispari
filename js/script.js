@@ -20,27 +20,13 @@ var displayResult = document.getElementById('result');
 
 
 var parola = prompt('Inserisci parola').toLocaleLowerCase();
-palidromeChecker(parola);
 console.log(parola);
 
 // var risultato fuzione
 
-var isPalidrome = palidromeChecker();
-console.log(isPalidrome);
-
-// isPALIDROME?
-
-if (isPalidrome) {
-    alert('is palidrome')
-} else {
-    alert('is not palidrome!');
-}
-
-
-function palidromeChecker() {
+function palidromeChecker(word) {
 
     //divisione parola in array di caratteri
-
     var split = word.split('');
 
     // inversione dell'index dei caratteri
@@ -60,9 +46,18 @@ function palidromeChecker() {
     // restituisci parola invertita intera
 
     return palidrome;
-
 }
 
+var isPalidrome = palidromeChecker(parola);
+
+
+// isPALIDROME?
+
+if (isPalidrome) {
+    alert('is palidrome');
+} else {
+    alert('is not palidrome!');
+}
 
 //! Pari e Dispari
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
