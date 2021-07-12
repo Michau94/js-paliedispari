@@ -4,16 +4,56 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
     padding: 20px;
+    text-align: center;
+    background-image: url(../img/matrix.jpg);
+    background-size: cover;
+    color: greenyellow;
 }
 
-.pali {
-    margin: 25px;
+/* UTILS */
+
+.m-15 {
+    margin: 15px;
 }
 
-.oddeven {
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* MAIN */
+
+.pali, .oddeven {
     margin: 25px;
+    border: 1px solid black;
+    width: 50%;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#button, #play {
+    border: 1px solid black;
+    width: 100px;
+    border-radius: 20px;
+    padding: 10px 5px;
+    background-color: #3C4F76;
+    color: #DDDBF1;
+    cursor: pointer;
+}
+
+#button:hover, #play:hover {
+    background-color: #DDDBF1;
+    color: #3C4F76;
 }

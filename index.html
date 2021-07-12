@@ -6,33 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
-    <div class="pali">
-        <h1>Palidrome Checker</h1>
-        <label for="word"></label>
-        <input type="text" id="word">
-        <p id="result"></p>
-        <button id="button">Check</button>
-    </div>
+    <div class="flex">
 
-    <div class="oddeven">
-        <h1>Pari e Dispari</h1>
-        <label for="odd-even">Pari o dispari</label>
-        <select name="odd-even" id="odd-even">
-            <option value="even">Pari</option>
-            <option value="odd">Dispari</option>
-        </select>
-        <label for="number">Inserisci un numero da 1 a 5</label>
-        <input type="text" id="number">
-        <p>Human number: <span id="human-number"></span></p>
-        <p>Machine number: <span id="cpu-number"></span></p>
-        <p>Sum: <span id="sum"></span></p>
-        <p id="winner"></p>
-        <button id="play">Play</button>
+        <div class="pali flex-c">
+            <h1 class="m-15">Palidrome Checker</h1>
+            <div class="m-15">
+                <label for="word"></label>
+                <input type="text" id="word" placeholder="Please insert word here">
+            </div>
+            <p id="result"></p>
+            <div id="button" class="m-15">Check</div>
+        </div>
+
+        <div class="oddeven flex-c">
+            <h1 class="m-15">Pari e Dispari</h1>
+
+            <div class="m-15">
+                <label for="odd-even">Pari o dispari</label>
+                <select name="odd-even" id="odd-even">
+                    <option value="even">Pari</option>
+                    <option value="odd">Dispari</option>
+                </select>
+            </div>
+
+            <div class="m-15">
+                <label for="number">Inserisci un numero da 1 a 6</label>
+                <input type="text" id="number" placeholder="Insert number here 1-6">
+            </div>
+
+            <div class="m-15">
+                <p>Human number: <span id="human-number"></span></p>
+                <p>Machine number: <span id="cpu-number"></span></p>
+                <p>Sum: <span id="sum"></span></p>
+                <h2 id="winner"></h2>
+            </div>
+            <div id="play" class="m-15">Play</div>
+        </div>
     </div>
 
 
