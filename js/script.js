@@ -24,11 +24,6 @@ var inputField = document.getElementById('word');
 var buttonCheck = document.getElementById('button');
 
 
-
-
-// var parola = prompt('Inserisci parola').toLocaleLowerCase();
-// console.log(parola);
-
 // var risultato fuzione
 
 function palidromeChecker(word) {
@@ -57,20 +52,30 @@ function palidromeChecker(word) {
 
 buttonCheck.addEventListener('click', function () {
 
+    // valore inserito in pagina
     var wordValue = inputField.value;
-    var lowercaseValue = wordValue.toLowerCase();
-    console.log(wordValue);
-    var isPalidrome = palidromeChecker(lowercaseValue);
 
-    // isPALIDROME?
-    if (isPalidrome) {
-        displayResult.innerText = wordValue + ' is palidrome!';
+    if (!wordValue || !isNaN(wordValue)) {
+        alert('Parola non valida')
     } else {
-        displayResult.innerText = wordValue + ' is not palidrome!';
+
+
+        //lowercase per comparazione
+        var lowercaseValue = wordValue.toLowerCase();
+        console.log(wordValue);
+        var isPalidrome = palidromeChecker(lowercaseValue);
+
+        // isPALIDROME?
+        if (isPalidrome) {
+            displayResult.innerText = wordValue + ' is palidrome!';
+        } else {
+            displayResult.innerText = wordValue + ' is not palidrome!';
+        }
+
+        wordValue = "";
+        inputField.value = " ";
+
     }
-
-    wordValue = "";
-
 })
 
 //! Pari e Dispari
@@ -92,5 +97,68 @@ buttonCheck.addEventListener('click', function () {
 -stabilisce se la somma dei due numeri è pari o dispari
 -se vera scelta utente = vittoria utente else vittoria pc
 */
+
+//Elementi da pagina
+
+var buttonPlay = document.getElementById('play');
+
+
+//dati da pagina
+var oddEvenField = document.getElementById('odd-even');
+var userNumberField = document.getElementById('number');
+
+
+
+// funzione numero random pc da 1 a 5
+function randomNumber() {
+    var randomNumber = Math.floor(Math.random() * 5) + 1;
+    return randomNumber;
+}
+
+
+
+
+buttonPlay.addEventListener('click', function () {
+
+    var oddEvenValue = oddEvenField.value;
+    console.log(oddEvenValue);
+    var userNumber = parseInt(userNumberField.value);
+    var random = randomNumber();
+    console.log(random);
+    console.log(userNumber);
+
+    var sum = userNumber + random;
+    console.log(sum);
+
+    // funzione stabilisce se un numero è pari o dispari
+    function oddEven(number) {
+        var num = 'odd';
+        if (number % 2 === 0) {
+            num = 'even';
+        }
+
+        return num;
+    }
+
+    // risultato funzione applicato alla somma
+    var result = oddEven(sum);
+    console.log(result);
+
+    if (result == oddEvenValue) {
+        alert('human')
+    } else {
+        alert('machine')
+    }
+
+
+    // Reset valori
+    userNumberField.value = " ";
+
+});
+
+
+
+
+
 
 
