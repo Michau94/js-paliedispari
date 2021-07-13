@@ -28,12 +28,12 @@ var buttonCheck = document.getElementById('button');
 
 function palidromeChecker(word) {
 
-    //!divisione parola in array di caratteri
+    //divisione parola in array di caratteri
     var split = word.split('');
     console.log(split);
 
 
-    //! soluzione con ciclo for
+    // soluzione con ciclo for
     var len = split.length;
     var palidrome = true;
     for (var i = 0; i < len / 2; i++) {
@@ -95,7 +95,7 @@ buttonCheck.addEventListener('click', function () {
 })
 
 //! Pari e Dispari
-// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+// L’ utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 // Generiamo un numero random(sempre da 1 a 5) per il computer(usando una funzione).
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari(usando una funzione)
@@ -131,9 +131,9 @@ var userNumberField = document.getElementById('number');
 
 
 // funzione numero random pc da 1 a 5
-function randomNumber() {
-    var randomNumber = Math.floor(Math.random() * 5) + 1;
-    return randomNumber;
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+
 }
 
 
@@ -153,7 +153,7 @@ buttonPlay.addEventListener('click', function () {
         gameInfo.classList.remove('hidden');
 
 
-        var random = randomNumber();
+        var random = randomNumber(1, 5);
         console.log(random);
         console.log(userNumber);
 
